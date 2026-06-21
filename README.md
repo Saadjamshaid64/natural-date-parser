@@ -32,7 +32,7 @@ parseDate("next friday at 9am");
 - 🌍 Returns country & timezone metadata alongside the parsed date
 - ⚡ Lightweight and fast, no heavy dependencies
 - 📦 Works in both Node.js and the browser
-- 🔌 Simple, single-function API
+- 🔌 Simple, single-function
 - 🧩 Supports relative expressions (`"in 5 days"`, `"2 days ago"`, etc.)
 
 ---
@@ -143,7 +143,7 @@ Contributions, issues, and feature requests are welcome.
 Feel free to check the [issues page](<!-- TODO: your GitHub issues link -->).
 
 ```bash
-git clone https://github.com/<your-username>/natural-date-parser.git
+git clone [https://github.com/<your-username>/natural-date-parser.git](https://github.com/Saadjamshaid64/natural-date-parser.git)
 cd natural-date-parser
 npm install
 ```
@@ -152,4 +152,4 @@ npm install
 
 ## 📄 License
 
-<!-- TODO: e.g. MIT --> © <!-- TODO: your name -->
+Licensed under the [Apache License 2.0](./LICENSE).
