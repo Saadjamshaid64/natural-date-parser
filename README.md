@@ -23,7 +23,7 @@ Examples:
 
 ```bash
 npm install natural-date-parser
----
+```
 
 # 📌 Usage
 ES Modules
