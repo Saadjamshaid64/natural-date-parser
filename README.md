@@ -19,7 +19,7 @@ parseDate("next friday at 9am");
 - [Installation](#-installation)
 - [Quick Start](#-quick-start)
 - [Return Object](#-return-object)
-- [Supported Expressions](#-supported-expressions)
+- [Example Expressions](#-example-expressions)
 - [Compatibility](#️-compatibility)
 - [Contributing](#-contributing)
 - [License](#-license)
@@ -143,7 +143,7 @@ Contributions, issues, and feature requests are welcome.
 Feel free to check the [issues page](<!-- TODO: your GitHub issues link -->).
 
 ```bash
-git clone [https://github.com/<your-username>/natural-date-parser.git](https://github.com/Saadjamshaid64/natural-date-parser.git)
+git clone https://github.com/Saadjamshaid64/natural-date-parser.git
 cd natural-date-parser
 npm install
 ```
