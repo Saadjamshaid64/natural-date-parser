@@ -34,3 +34,15 @@ import parseDate from "natural-date-parser";
 console.log(parseDate("tomorrow"));
 console.log(parseDate("next monday"));
 ```
+
+## 🧠 Examples
+```bash
+parseDate("today");        // current date
+parseDate("tomorrow");     // tomorrow
+parseDate("yesterday");    // yesterday
+parseDate("next week");    // +7 days
+parseDate("in 5 days");    // +5 days
+parseDate("next friday");  // upcoming friday
+```
+
+
