@@ -94,11 +94,9 @@ console.log(result);
 | `timezone` | `string`  | IANA timezone identifier (e.g. `Asia/Karachi`)                    |
 | `date`     | `string`  | Parsed date/time, formatted as `YYYY-MM-DD HH:mm:ss`              |
 
-> ⚠️ **Note:** earlier versions of this README said the library returns a raw `Date` object. That's outdated — it now returns the structured object shown above, which is safer to log, store in a database, or send directly over an API response.
-
 ---
 
-## 🧠 Supported Expressions
+## 🧠 Example Expressions
 
 ```js
 parseDate("today");
