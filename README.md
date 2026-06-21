@@ -9,7 +9,7 @@ Examples:
 
 ---
 
-## 🚀 Features
+### 🚀 Features
 
 - 🕒 Parse natural language dates
 - ⚡ Lightweight and fast
@@ -19,13 +19,13 @@ Examples:
 
 ---
 
-## 📥 Installation
+### 📥 Installation
 
 ```bash
 npm install natural-date-parser
 ```
 
-## 📌 Usage
+### 📌 Usage
 ES Modules
 
 ```bash
@@ -35,7 +35,7 @@ console.log(parseDate("tomorrow"));
 console.log(parseDate("next monday"));
 ```
 
-## 🧠 Examples
+### 🧠 Examples
 ```bash
 parseDate("today");        // current date
 parseDate("tomorrow");     // tomorrow
@@ -45,4 +45,6 @@ parseDate("in 5 days");    // +5 days
 parseDate("next friday");  // upcoming friday
 ```
 
+### 📌 Notes
 
+All outputs return a JavaScript Date object.
