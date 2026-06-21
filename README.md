@@ -1,50 +1,157 @@
-# 📦 Natural Date Parser
+# 📦 natural-date-parser
 
-A lightweight JavaScript library to convert natural language dates into JavaScript `Date` objects.
+[![npm version](https://img.shields.io/npm/v/natural-date-parser.svg)](https://www.npmjs.com/package/natural-date-parser)
+[![npm downloads](https://img.shields.io/npm/dm/natural-date-parser.svg)](https://www.npmjs.com/package/natural-date-parser)
+[![license](https://img.shields.io/npm/l/natural-date-parser.svg)](./LICENSE)
 
-Examples:
-- "tomorrow" → Date object  
-- "next friday" → Date object  
-- "2 days ago" → Date object  
+A lightweight JavaScript library that converts natural language date expressions — like `"tomorrow"`, `"next friday"`, or `"2 days ago"` — into a structured, timezone-aware date result.
 
----
-
-### 🚀 Features
-
-- 🕒 Parse natural language dates
-- ⚡ Lightweight and fast
-- 📦 Works in Node.js and browsers
-- 🔌 Simple API
-- 🌍 Supports relative date expressions
+```js
+parseDate("next friday at 9am");
+// → { success: true, date: '2026-06-26 09:00:00', timezone: 'Asia/Karachi', ... }
+```
 
 ---
 
-### 📥 Installation
+## 📑 Table of Contents
+
+- [Features](#-features)
+- [Installation](#-installation)
+- [Quick Start](#-quick-start)
+- [Return Object](#-return-object)
+- [Supported Expressions](#-supported-expressions)
+- [Compatibility](#️-compatibility)
+- [Contributing](#-contributing)
+- [License](#-license)
+
+---
+
+## ✨ Features
+
+- 🕒 Parses natural language date expressions
+- 🌍 Returns country & timezone metadata alongside the parsed date
+- ⚡ Lightweight and fast, no heavy dependencies
+- 📦 Works in both Node.js and the browser
+- 🔌 Simple, single-function API
+- 🧩 Supports relative expressions (`"in 5 days"`, `"2 days ago"`, etc.)
+
+---
+
+## 📥 Installation
 
 ```bash
 npm install natural-date-parser
 ```
 
-### 📌 Usage
-ES Modules
+Using yarn:
 
 ```bash
+yarn add natural-date-parser
+```
+
+Using pnpm:
+
+```bash
+pnpm add natural-date-parser
+```
+
+---
+
+## 🚀 Quick Start
+
+```js
 import parseDate from "natural-date-parser";
 
-console.log(parseDate("tomorrow"));
-console.log(parseDate("next monday"));
+const result = parseDate("next friday at 9am");
+console.log(result);
 ```
 
-### 🧠 Examples
+**Output:**
+
+```js
+{
+  success: true,
+  input: 'next friday at 9am',
+  country: 'Pakistan',
+  code: 'PK',
+  timezone: 'Asia/Karachi',
+  date: '2026-06-26 09:00:00'
+}
+```
+
+---
+
+## 📤 Return Object
+
+`parseDate()` returns a plain JavaScript object — **not** a raw `Date` instance — with the following fields:
+
+| Field      | Type      | Description                                                      |
+|------------|-----------|--------------------------------------------------------------------|
+| `success`  | `boolean` | `true` if the input was successfully parsed, `false` otherwise    |
+| `input`    | `string`  | The original string you passed in, echoed back for reference      |
+| `country`  | `string`  | Detected country name used to resolve the timezone                |
+| `code`     | `string`  | ISO 3166-1 alpha-2 country code (e.g. `PK`)                       |
+| `timezone` | `string`  | IANA timezone identifier (e.g. `Asia/Karachi`)                    |
+| `date`     | `string`  | Parsed date/time, formatted as `YYYY-MM-DD HH:mm:ss`              |
+
+> ⚠️ **Note:** earlier versions of this README said the library returns a raw `Date` object. That's outdated — it now returns the structured object shown above, which is safer to log, store in a database, or send directly over an API response.
+
+---
+
+## 🧠 Supported Expressions
+
+```js
+parseDate("today");
+parseDate("tomorrow");
+parseDate("yesterday");
+parseDate("next week");
+parseDate("in 5 days");
+parseDate("next friday");
+parseDate("next friday at 9am");
+parseDate("2 days ago");
+```
+
+| Input               | Resolves to              |
+|----------------------|---------------------------|
+| `"today"`            | Current date              |
+| `"tomorrow"`          | +1 day                    |
+| `"yesterday"`         | −1 day                    |
+| `"next week"`         | +7 days                   |
+| `"in 5 days"`         | +5 days                   |
+| `"next friday"`       | Upcoming Friday           |
+| `"next friday at 9am"`| Upcoming Friday, 9:00 AM  |
+| `"2 days ago"`        | −2 days                   |
+
+---
+
+## 🌍 Timezone & Country Detection
+
+<!-- TODO: explain here whether this is auto-detected from the system/browser locale,
+     or whether it can be overridden by passing options, e.g.:
+     parseDate("tomorrow", { country: "PK" }) -->
+
+---
+
+## 🖥️ Compatibility
+
+- Node.js: <!-- TODO: minimum supported version, e.g. >=14 -->
+- Browsers: modern browsers with ES Modules support
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome.
+Feel free to check the [issues page](<!-- TODO: your GitHub issues link -->).
+
 ```bash
-parseDate("today");        // current date
-parseDate("tomorrow");     // tomorrow
-parseDate("yesterday");    // yesterday
-parseDate("next week");    // +7 days
-parseDate("in 5 days");    // +5 days
-parseDate("next friday");  // upcoming friday
+git clone https://github.com/<your-username>/natural-date-parser.git
+cd natural-date-parser
+npm install
 ```
 
-### 📌 Notes
+---
 
-All outputs return a JavaScript Date object.
+## 📄 License
+
+<!-- TODO: e.g. MIT --> © <!-- TODO: your name -->
