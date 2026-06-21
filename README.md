@@ -25,5 +25,12 @@ Examples:
 npm install natural-date-parser
 ```
 
-# 📌 Usage
+## 📌 Usage
 ES Modules
+
+```bash
+import parseDate from "natural-date-parser";
+
+console.log(parseDate("tomorrow"));
+console.log(parseDate("next monday"));
+```
