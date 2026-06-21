@@ -1,0 +1,35 @@
+{
+  "name": "natural-date-parser",
+  "version": "1.0.0",
+  "description": "Parse natural language dates with country timezone support.",
+  "main": "index.js",
+  "type": "module",
+  "keywords": [
+    "date",
+    "parser",
+    "natural-language",
+    "timezone",
+    "country",
+    "datetime",
+    "chrono",
+    "scheduler"
+  ],
+  "author": "Saad Jamshaid",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Saadjamshaid64/natural-date-parser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Saadjamshaid64/natural-date-parser/issues"
+  },
+  "homepage": "https://github.com/Saadjamshaid64/natural-date-parser#readme",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "chrono-node": "^2.9.1",
+    "countries-and-timezones": "^3.9.0",
+    "moment-timezone": "^0.6.2"
+  }
+}
