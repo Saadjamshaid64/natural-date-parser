@@ -7,8 +7,8 @@
 A lightweight JavaScript library that converts natural language date expressions — like `"tomorrow"`, `"next friday"`, or `"2 days ago"` — into a structured, timezone-aware date result.
 
 ```js
-parseDate("next friday at 9am");
-// → { success: true, date: '2026-06-26 09:00:00', timezone: 'Asia/Karachi', ... }
+parseDate("next friday at 9am", "US");
+// → { success: true, date: '2026-06-26 09:00:00', timezone: 'America/Adak', ... }
 ```
 
 ---
@@ -30,6 +30,7 @@ parseDate("next friday at 9am");
 
 - 🕒 Parses natural language date expressions
 - 🌍 Returns country & timezone metadata alongside the parsed date
+- 🌎 Accepts both country names and ISO country codes
 - ⚡ Lightweight and fast, no heavy dependencies
 - 📦 Works in both Node.js and the browser
 - 🔌 Simple, single-function
@@ -62,8 +63,14 @@ pnpm add natural-date-parser
 ```js
 import parseDate from "natural-date-parser";
 
-const result = parseDate("next friday at 9am");
-console.log(result);
+// Using a country name
+const result1 = parseDate("next friday at 9am", "Germany");
+
+// Using a country code
+const result2 = parseDate("next friday at 9am", "DE");
+
+console.log(result1);
+console.log(result2);
 ```
 
 **Output:**
@@ -71,11 +78,11 @@ console.log(result);
 ```js
 {
   success: true,
-  input: 'next friday at 9am',
-  country: 'Pakistan',
-  code: 'PK',
-  timezone: 'Asia/Karachi',
-  date: '2026-06-26 09:00:00'
+  input: 'next Friday at 9am',
+  country: 'Germany',
+  code: 'DE',
+  timezone: 'Europe/Berlin',
+  date: '2026-07-03 18:00:00'
 }
 ```
 
@@ -99,14 +106,17 @@ console.log(result);
 ## 🧠 Example Expressions
 
 ```js
-parseDate("today");
-parseDate("tomorrow");
-parseDate("yesterday");
-parseDate("next week");
-parseDate("in 5 days");
-parseDate("next friday");
-parseDate("next friday at 9am");
-parseDate("2 days ago");
+parseDate("today", "PK");
+parseDate("tomorrow", "Pakistan");
+
+parseDate("yesterday", "DE");
+parseDate("next week", "Germany");
+
+parseDate("in 5 days", "US");
+parseDate("next friday", "United States");
+
+parseDate("next friday at 9am", "BE");
+parseDate("2 days ago", "Belgium");
 ```
 
 | Input               | Resolves to              |
