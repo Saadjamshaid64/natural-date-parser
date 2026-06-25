@@ -3,27 +3,46 @@ import moment from "moment-timezone";
 import ct from "countries-and-timezones";
 
 export default function smartParse(input, countryInput) {
-
     if (!input) {
-        return { success: false, error: "Input required" };
+        return {
+            success: false,
+            error: "Input required"
+        };
     }
 
     if (!countryInput) {
-        return { success: false, error: "Country required" };
+        return {
+            success: false,
+            error: "Country required"
+        };
     }
 
-    const code = countryInput.toUpperCase();
+    const searchValue = countryInput.trim();
 
-    const country = ct.getCountry(code);
+    // Try ISO country code first
+    let country = ct.getCountry(searchValue.toUpperCase());
+
+    // If not found, try country name
+    if (!country) {
+        country = Object.values(ct.getAllCountries()).find(
+            c => c.name.toLowerCase() === searchValue.toLowerCase()
+        );
+    }
 
     if (!country) {
-        return { success: false, error: "Invalid country code or name" };
+        return {
+            success: false,
+            error: "Invalid country code or country name"
+        };
     }
 
     const parsedDate = chrono.parseDate(input);
 
     if (!parsedDate) {
-        return { success: false, error: "Invalid date expression" };
+        return {
+            success: false,
+            error: "Invalid date expression"
+        };
     }
 
     const timezone = country.timezones[0];
