@@ -18,6 +18,7 @@ parseDate("next friday at 9am", "US");
 - [Features](#-features)
 - [Installation](#-installation)
 - [Quick Start](#-quick-start)
+- [Country Input](#-country-input)
 - [Return Object](#-return-object)
 - [Example Expressions](#-example-expressions)
 - [Compatibility](#️-compatibility)
@@ -85,6 +86,17 @@ console.log(result2);
   date: '2026-07-03 18:00:00'
 }
 ```
+
+---
+
+## 🌍 Country Input
+
+The second argument accepts either:
+
+- A country name (`"Pakistan"`, `"Germany"`, `"United States"`)
+- An ISO 3166-1 alpha-2 country code (`"PK"`, `"DE"`, `"US"`)
+
+Both formats resolve to the same result — the library handles the lookup internally and returns the matching IANA timezone.
 
 ---
 
