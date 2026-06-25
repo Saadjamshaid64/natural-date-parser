@@ -144,14 +144,6 @@ parseDate("2 days ago", "Belgium");
 
 ---
 
-## 🌍 Timezone & Country Detection
-
-<!-- TODO: explain here whether this is auto-detected from the system/browser locale,
-     or whether it can be overridden by passing options, e.g.:
-     parseDate("tomorrow", { country: "PK" }) -->
-
----
-
 
 ## 🖥️ Compatibility
 
