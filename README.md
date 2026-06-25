@@ -134,9 +134,35 @@ parseDate("2 days ago", "Belgium");
 
 ## 🌍 Timezone & Country Detection
 
-<!-- TODO: explain here whether this is auto-detected from the system/browser locale,
-     or whether it can be overridden by passing options, e.g.:
-     parseDate("tomorrow", { country: "PK" }) -->
+````md
+## 🌍 Timezone & Country Detection
+
+The parser determines the timezone from the country provided as the second argument.
+
+Both country names and ISO country codes are supported.
+
+```js
+parseDate("tomorrow", "Pakistan");
+parseDate("tomorrow", "PK");
+```
+
+Both produce:
+
+```js
+{
+  country: "Pakistan",
+  code: "PK",
+  timezone: "Asia/Karachi"
+}
+```
+
+Country name matching is case-insensitive:
+
+```js
+parseDate("tomorrow", "Pakistan");
+parseDate("tomorrow", "pakistan");
+parseDate("tomorrow", "PAKISTAN");
+```
 
 ---
 
