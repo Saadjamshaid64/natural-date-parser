@@ -1,6 +1,6 @@
 {
   "name": "natural-date-parser",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Parse natural language dates with country timezone support.",
   "main": "index.js",
   "type": "module",
